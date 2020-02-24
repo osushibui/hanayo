@@ -1,6 +1,7 @@
 {{ define "navbar" }}
 {{ $isRAP   := and (hasAdmin .Context.User.Privileges) (isRAP .Path) }}
 {{ $isAdmin := hasAdmin .Context.User.Privileges }}
+{{ $isoClan := qb "SELECT user, clan FROM user_clans WHERE user = ? AND perms = 8" .Context.User.ID }}
 {{ $isClan := qb "SELECT user, clan FROM user_clans WHERE user = ?" .Context.User.ID }}
 {{ $ds      := band .ClientFlags 1 }}
 <div class="ui secondary fixed-height stackable white background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}" id="navbar">
@@ -23,7 +24,8 @@
 					{{ navbarItem .Path (.T "Discord Server") .Conf.DiscordServer }}
 					{{ navbarItem .Path (.T "About") "/about" }}
 					{{ navbarItem .Path (.T "Rules") "/doc/rules" }}
-					<a class="item" href="{{ .T "/static/shibui.exe" }}">{{ .T "Server switcher" }}</a>
+					{{ navbarItem .Path (.T "Documentation (FAQ)") "/doc" }}
+					{{ navbarItem .Path (.T "Source Code (GitHub)") "https://github.com/osushibui/shibui" }}
 				</div>
 			</div>
 			{{ if .Context.User.Username }}
@@ -37,19 +39,19 @@
 				<span>{{ .T "Clans" }}</span>
 				<div class="menu">
 					{{ navbarItem .Path (.T "Clan Leaderboard") "/clans?mode=0" }}
-					{{ if ($isClan) }}
+					{{ if ($isoClan) }}
 					{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}
 					{{ else }}
 					{{ end }}
 					{{ if ($isClan) }}
 					{{ else }}
-					<div class="divider"></div>
 					{{ navbarItem .Path (.T "Create Clan") "/clans/create" }}
 					{{ end }}
 				</div>
 			</div>
 			{{ end }}
 			{{ navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
+			{{ navbarItem .Path (.T "Connect" | printf "<i class=\"green download icon\"></i>%s") "/connect" }}
 			{{ if $isAdmin }}{{ navbarItem .Path (.T "SAP" | printf "<b>%s</b>") "https://old.shibui.pw/index.php?p=100" }}{{ end }}
 			{{ end }}
 		<div class="firetrucking-right-menu">

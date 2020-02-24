@@ -63,6 +63,7 @@
 				{{ $isVerifiedMania := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1015" $user.id }}
 				{{ $isVerifiedTaiko := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1017" $user.id }}
 				{{ $isAlumni := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1018" $user.id }}
+				{{ $isContributor := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1020" $user.id }}
 				<a href="/c/{{ $user.clan.id }}?mode=0">{{ $user.clan.tag }} </a>{{ .username }} 
 				{{ if $isVerified }}
 					<i class="blue check small icon" title="Verified Player"></i>
@@ -76,6 +77,10 @@
 				{{ if $isVerifiedTaiko }}
 					<i class="blue music small icon" title="Verified Taiko Player"></i> 
 				{{ end }}
+				{{ if $donor }}
+					<i class="yellow heart small icon" title="Supporter"></i> 
+				{{ end }}
+
 				</div>
 			</h1>
 		<b title="{{(country .country true)}}">{{ $global.T "%s" (country .country false) | html }}</b>
@@ -97,8 +102,8 @@
 			{{else if $isAlumni }}
 			<font color="#888888"> <b>Alumni</b> </font>
 			
-			{{else if $donor }}
-			<font color="#e03997"> <b>Supporter</b> </font>
+			{{ else if $isContributor }}
+			<font color="#00ffdf"> <b>Contributor</b> </font>
 
 			{{ end }}	
 		</div>
@@ -130,7 +135,7 @@
 				<br>
 				<br>
 				<center>
-				<font color="#d4af37"> <b>🏆 Shibui Champion! </b> </font>
+				<font color="#d4af37"> <b>ðŸ† Shibui Champion! </b> </font>
 				</center>
 			{{end}}
 		</div>

@@ -21,7 +21,6 @@
 			{{ $admin  := has .privileges 1048575 }}
 			{{ $chatmod  := has .privileges 2883911 }}
 			{{ $bn  := has .privileges 267 }}
-			{{ $donor := has .privileges 7 }}
 			{{ $mod := has .privileges 803071 }}
 			
 				
@@ -64,6 +63,7 @@
 				{{ $isVerifiedTaiko := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1017" $user.id }}
 				{{ $isAlumni := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1018" $user.id }}
 				{{ $isContributor := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1020" $user.id }}
+				{{ $donor := qb "SELECT * FROM user_badges WHERE user = ? AND badge = 1021" $user.id }}
 				<a href="/c/{{ $user.clan.id }}?mode=0">{{ $user.clan.tag }} </a>{{ .username }} 
 				{{ if $isVerified }}
 					<i class="blue check small icon" title="Verified Player"></i>

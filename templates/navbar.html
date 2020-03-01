@@ -21,6 +21,7 @@
             <div class="ui dropdown item">
 				<span>{{ .T "Help" }}</span>
 				<div class="menu">
+					{{ navbarItem .Path (.T "Powered by Shibui") "https://shibui.pw" }}
 					{{ navbarItem .Path (.T "Discord Server") .Conf.DiscordServer }}
 					{{ navbarItem .Path (.T "About") "/about" }}
 					{{ navbarItem .Path (.T "Rules") "/doc/rules" }}

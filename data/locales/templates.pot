@@ -59,26 +59,26 @@ msgstr ""
 msgid "Glad to have you back here, %s! To finish the password recovery, type in a new password:"
 msgstr ""
 
-msgid "Nope."
+msgid "Not for you, sorry."
 msgstr ""
 
 msgid "That key could not be found. Perhaps it expired?"
 msgstr ""
 
-msgid "All right, we have changed your password and you should now be able to login! Have fun!"
+msgid "Password changed. Please login."
 msgstr ""
 
 # register/register.html
 msgid "Register"
 msgstr ""
 
-msgid "Sorry, it's not possible to register at the moment. Please try again later."
+msgid "Registration is currently disabled."
 msgstr ""
 
-msgid "Remember: this seems like it's your second account! Do not multiaccount, or you're likely to get restricted!"
+msgid "NOTICE: This seems like it's your second account. Please note that multiaccounting is bannable!"
 msgstr ""
 
-msgid "Username (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
+msgid "Username (2-60 characters)"
 msgstr ""
 
 msgid "Password (at least 8 characters)"
@@ -87,38 +87,38 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-msgid "You have been successfully registered on Ripple! You now need to verify your account."
+msgid "You have registered on Shibui! Now you need to login."
 msgstr ""
 
 # Register checks
 msgid "Your password is too short! It must be at least 8 characters long."
 msgstr ""
 
-msgid "Your password is one of the most common passwords on the entire internet. No way we're letting you use that!"
+msgid "Atleast be a little bit secure... (Unsecure password, please use a different one)"
 msgstr ""
 
 msgid "Your username must contain alphanumerical characters, spaces, or any of <code>_[]-</code>"
 msgstr ""
 
-msgid "You're not allowed to register with that username."
+msgid "Username has been blocked."
 msgstr ""
 
-msgid "Please pass a valid email address."
+msgid "Please enter a valid email."
 msgstr ""
 
 msgid "An username can't contain both underscores and spaces."
 msgstr ""
 
-msgid "An user with that username already exists!"
+msgid "User already exists."
 msgstr ""
 
-msgid "An user with that email address already exists!"
+msgid "A user with that email already exists."
 msgstr ""
 
 msgid "Captcha is invalid."
 msgstr ""
 
-msgid "Whoops, an error slipped in. You might have been registered, though. I don't know."
+msgid "ERROR: Login is currently having some problems. You may have been registered - not sure, though."
 msgstr ""
 
 # register/verify.html
@@ -128,22 +128,22 @@ msgstr ""
 msgid "Your account has been created, however it still <b>needs to be verified!</b> Please log in into <b><u>osu! (the game)</u></b> using your account. <b>There is <u>no email confirmation</u> at the moment. All you need to do is connect to Ripple from the osu! client!</b> If you're having trouble, <a href='/doc/1'>follow this guide</a>."
 msgstr ""
 
-msgid "<b class='big text'>Do not let anyone except yourself log into your Ripple account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting."
+msgid "<b class='big text'>Do not let anyone except yourself log into your Shibui account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting."
 msgstr ""
 
 msgid "The Guide (<a href='/doc/connection_guide' target='_blank'>Windows</a>, <a href='/doc/linux' target='_blank'>Linux</a>). TL;DR version below."
 msgstr ""
 
-msgid "Download the server switcher"
+msgid "Connect to Shibui"
 msgstr ""
 
-msgid "Extract it, disable your antivirus, execute <i>RippleServerSwitcher.exe</i> <b>as administrator</b>"
+msgid "Extract it, disable your antivirus, execute <i>shibui.exe</i> <b>as administrator</b>"
 msgstr ""
 
-msgid "Click on <b>Connect to Ripple</b>, then <b>Ok/Yes</b>"
+msgid "Click on <b>Connect to Shibui</b>, then <b>Ok/Yes</b>"
 msgstr ""
 
-msgid "Make sure the switcher says you're connected to <b>Ripple</b>"
+msgid "Make sure the switcher says you're connected to <b>Shibui</b>"
 msgstr ""
 
 msgid "If it says something about read-only mode, go to <code>C:\\Windows\\System32\\Drivers\\etc</code>, open the hosts' file Properties and make sure it's not set to \"Read only\"."
@@ -165,16 +165,16 @@ msgstr ""
 msgid "Congratulations for not reading things!"
 msgstr ""
 
-msgid "Multiaccounts are not allowed on Ripple"
+msgid "Multiaccounting is against the rules."
 msgstr ""
 
 msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='https://support.ripple.moe'>support.ripple.moe</a></b>. You better read the rules next time."
 msgstr ""
 
-msgid "Welcome to Ripple"
+msgid "Welcome to Shibui"
 msgstr ""
 
-msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Ripple and <a href='/login'>log in</a> on the website!"
+msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Shibui and <a href='/login'>log in</a> on the website!"
 msgstr ""
 
 msgid "Here's a few things you might want to check out:"
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-msgid "Server switcher"
+msgid "Connection Guide"
 msgstr ""
 
 msgid "Status"
@@ -210,10 +210,10 @@ msgstr ""
 msgid " - in case, well, you need help doing stuff"
 msgstr ""
 
-msgid " - in case you believe Ripple is down"
+msgid " - in case you believe Shibui is down"
 msgstr ""
 
-msgid " - in case you want to talk with people about Ripple"
+msgid " - in case you want to talk with people about Shibui"
 msgstr ""
 
 msgid " - just in case"
@@ -223,7 +223,7 @@ msgstr ""
 msgid "Recover account"
 msgstr ""
 
-msgid "Can't find a way to get back access to your Ripple account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
+msgid "2FA is disabled."
 msgstr ""
 
 msgid "Oh no you don't."
@@ -236,10 +236,10 @@ msgid "Recovery code is invalid."
 msgstr ""
 
 # register/elmo.html
-msgid "Elmo! Stop!"
+msgid "Stop right there."
 msgstr ""
 
-msgid "Stop!"
+msgid "Hey!"
 msgstr ""
 
 msgid "We see that you're trying to sign up while having already signed up as %s! Please note that multiaccounting is punishable, and can lead to a one month restriction!"
@@ -248,10 +248,10 @@ msgstr ""
 msgid "If you're %s, keep in mind that multiaccounting = ban."
 msgstr ""
 
-msgid "If you're not %s, but you're using %s's computer, please sign up on Ripple from your own computer."
+msgid "If you're not %s, but you're using %s's computer, please sign up on Shibui from your own computer."
 msgstr ""
 
-msgid "If you live with %s and you don't have your own computer from which to sign up on Ripple, then please contact support@ripple.moe, and we'll deal with your specific case."
+msgid "If you live with %s and you don't have your own computer from which to sign up on Shibui, then please contact a staff member, and we'll deal with your specific case."
 msgstr ""
 
 msgid "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good."

@@ -7,16 +7,9 @@
 		{{ .T "<b class='big text'>Do not let anyone except yourself log into your Shibui! account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting." (config "DiscordServer") | html }}
 	</div>
 	<div class="ui segment">
-		<h1 class="ui heading">{{ .T "How to connect" | html }}</h1>
-		<ol class="ui list">
-			<li><a href='{{ .T "https://shibui.pw/connect" }}'><b>{{ .T "Connect to Shibui" }}</b></a></li>
-			<li>{{ .T "Extract it, disable your antivirus, execute it <b>as administrator</b>" | html }}</li>
-			<li>{{ .T "Click on <b>install certificate</b>, then <b>Yes</b>" | html }}</li>
-			<li>{{ .T "Make sure the switcher says you're playing on <b>Shibui!</b> server, if not click <b>On/Off</b>" | html }}</li>
-			<li>{{ .T "If it says something about read-only mode, go to <code>C:\\Windows\\System32\\Drivers\\etc</code>, open the hosts' file Properties and make sure it's not set to \"Read only\"." | html }}</li>
-		</ol>
+		<h1 class="ui heading"><b>{{ .T "<a href='/connect'>Connection guide!</a>" | html }}</b></h1>
 		<p>
-			{{ .T "If you're still having trouble, then again, get on our <a href='%s'>Discord server's</a> #help channel. To have a better chance to be answered, say \"strawberry\" anywhere in your messages so that we know you have actually read this." (config "DiscordServer") | html }}
+			{{ .T "If you're still having trouble, then again, get on our <a href='%s'>Discord server's</a> #help channel. To have a better chance to be answered, say \"poggers\" anywhere in your messages so that we know you have actually read this." (config "DiscordServer") | html }}
 		</p>
 	</div>
 	<div class="ui center aligned segment">

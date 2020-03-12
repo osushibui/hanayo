@@ -52,9 +52,12 @@
 				</div>
 			</div>
 			{{ end }}
-			{{ navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
-			{{ navbarItem .Path (.T "Connect" | printf "<i class=\"green download icon\"></i>%s") "/connect" }}
 			{{ if $isAdmin }}{{ navbarItem .Path (.T "SAP" | printf "<b>%s</b>") "https://old.shibui.pw/index.php?p=100" }}{{ end }}
+			<div class="firetrucking-right-menu">
+			{{ navbarItem .Path (.T "" | printf "<i class=\"blue pencil icon\"></i>%s") "/apply" }}
+			{{ navbarItem .Path (.T "" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
+			{{ navbarItem .Path (.T "" | printf "<i class=\"green download icon\"></i>%s") "/connect" }}
+			</div>
 			{{ end }}
 		<div class="firetrucking-right-menu">
 			<div class="item">

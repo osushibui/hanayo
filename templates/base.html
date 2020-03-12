@@ -96,7 +96,8 @@
 			
 			<font style='color:white'>
 			{{ if $ds }}<font style='color:white' >{{ end }}
-			{{ .T "&copy; %d  osu!Shibui, using Hanayo %s" (curryear) (version) | html }}  |
+			{{ .T "&copy; %d  osu!Shibui, using Hanayo %s" (curryear) (version) | html }}
+			<a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a> |
 			<div class="ui scrolling dropdown" style="margin-left: 5px;" id="language-selector">
 				{{ $lang := .Context.Language }}
 				{{ with $lang }}

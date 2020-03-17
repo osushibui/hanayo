@@ -37,20 +37,22 @@
 					{{ navbarItem .Path (.T "Beatmaps Listing") "/beatmaps" }}
 				</div>
 			</div>
+			{{ if ($isoClan) }}
 			<div class="ui dropdown item">
 				<span>{{ .T "Clans" }}</span>
 				<div class="menu">
-					{{ navbarItem .Path (.T "Clan Leaderboard") "/clans?mode=0" }}
-					{{ if ($isoClan) }}
 					{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}
-					{{ else }}
-					{{ end }}
-					{{ if ($isClan) }}
-					{{ else }}
-					{{ navbarItem .Path (.T "Create Clan") "/clans/create" }}
-					{{ end }}
 				</div>
 			</div>
+			{{ end }}
+			{{ if not ($isClan) }}
+			<div class="ui dropdown item">
+				<span>{{ .T "Clans" }}</span>
+				<div class="menu">
+					{{ navbarItem .Path (.T "Create Clan") "/clan/create" }}
+				</div>
+			</div>
+			{{ end }}
 			{{ end }}
 			{{ if $isAdmin }}{{ navbarItem .Path (.T "SAP" | printf "<b>%s</b>") "https://old.shibui.pw/index.php?p=100" }}{{ end }}
 			{{ end }}
@@ -72,8 +74,8 @@
 					<div class="menu">
 						{{ navbarItem .Path (.T "Profile") (printf "/u/%d" .Context.User.ID) }}
 						{{ navbarItem .Path (.T "Friends") "/friends" }}
-						{{ navbarItem .Path (.T "Settings") "/settings" }}
 						{{ navbarItem .Path (.T "Followers") "/followers" }}
+						{{ navbarItem .Path (.T "Settings") "/settings" }}
 						{{ navbarItem .Path (.T "Log out") (printf "/logout?k=%s" (.Session.Get "logout")) }}
 					</div>
 				</div>
@@ -87,4 +89,5 @@
 	</div>
 </div>
 {{ end }}
+
 

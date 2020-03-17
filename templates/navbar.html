@@ -69,20 +69,21 @@
 				</div>
 			</div>
 			{{ if .Context.User.Username }}
-				<div class="ui dropdown item">
-					<img id="avatar" class="ui avatar image" src="{{ config "AvatarURL" }}/{{ .Context.User.ID }}">
-					<span>{{ .Context.User.Username }}</span>
+				<div class="ui dropdown item ui dropdown item dropdownmenu" style="border-radius: 50% !important; padding: 0.78571429em 0.48571429em !important; transition: background 0.2s ease;">
+					<img class="ui avatar image"  src="{{ config "AvatarURL" }}/{{ .Context.User.ID }}">
 					<div class="menu">
 						{{ navbarItem .Path (.T "Profile") (printf "/u/%d" .Context.User.ID) }}
 						{{ navbarItem .Path (.T "Friends") "/friends" }}
-						{{ navbarItem .Path (.T "Your Followers") "/followers" }}
 						{{ navbarItem .Path (.T "Settings") "/settings" }}
+						{{ navbarItem .Path (.T "Followers") "/followers" }}
 						{{ navbarItem .Path (.T "Log out") (printf "/logout?k=%s" (.Session.Get "logout")) }}
 					</div>
 				</div>
 			{{ else }}
-				{{ navbarItem .Path (.T "Log in") "/login" }}
-				{{ navbarItem .Path (.T "Register") "/register" }}
+						{{ navbarItem .Path (.T "Log in") "/login" }}
+						{{ navbarItem .Path (.T "Register") "/register" }}
+					</div>
+				</div>
 			{{ end }}
 		</div>
 	</div>

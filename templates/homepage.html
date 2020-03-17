@@ -1,6 +1,6 @@
 {{/*###
 Handler=/
-TitleBar=Home Page
+TitleBar=Home
 KyutGrill=homepage2.jpg
 */}}
 {{ define "tpl" }}
@@ -9,9 +9,6 @@ KyutGrill=homepage2.jpg
 {{ $   := . }}
 
 <div class="ui container">
-<div class="ui center aligned segment">
-	<img src="/static/logos/ainu.png">
-</div>
 {{ $set := systemSettings "website_home_alert" }}
 {{ with $set.website_home_alert.String }}
 	<div class="ui warning message">
@@ -29,9 +26,17 @@ KyutGrill=homepage2.jpg
 		<p>
 			{{ .T "Shibui! is a private osu! server, featuring multiplayer, PP, a very active community and a development team going strong implementing new features and squashing bugs. <a href='/about'>You can check out even more features here.</a> It has also a very friendly community, and it's <a href='https://github.com/osuthailand'>open source!</a> Just so you know, <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
 		</p>
+		</div>
+		<div class="ui center aligned segment">
+			<img src="/static/logos/ainu.png">
+		</div>
+		<div class="ui segment">
 		<h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Shibui!! It's risk-free: you won't get your account banned on the official server if you play on Shibui!<br>You can also switch anytime between the official osu! server and Shibui!!" | html }}</h3>
 	</div>
 {{ else }}
+		<div class="ui center aligned segment">
+			<img src="/static/logos/ainu.png">
+		</div>
 	<div class="ui segment">
 		<h1 class="ui header">{{ .T "Howdy, %s!" .Context.User.Username }}</h1>
 		<p>

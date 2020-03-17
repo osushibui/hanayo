@@ -16,11 +16,12 @@ KyutGrill=leaderboard2.jpg
 		if (country.length != 2)
 			country = "";
 	</script>
-	<div class="ui two item menu" id="rx-menu">
-			<a class="0 item" data-rx="0" href="/leaderboard?rx=0">Regular</a>
-			<a class="1 item" data-rx="1" href="/leaderboard?rx=1">Relax</a>
-	</div>
-
+	<div class="ui three item menu">
+			<a class="item" href="/leaderboard?rx=0">Regular</a>
+			<a class="item" href="/leaderboard?rx=1">Relax</a>
+			<a class="item" href="/clans?mode=0">Clans</a>
+	</div>	
+	<hr class="style-two">
 	<div class="ui four item menu" id="mode-menu">
 		{{ range $k, $v := modes }}
 			<a class="{{ favMode $favMode $k }}item" data-mode="{{ $k }}" href="/leaderboard?mode={{ $k }}">{{ $v }}</a>

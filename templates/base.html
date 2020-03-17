@@ -65,7 +65,7 @@
 				<noscript>Research has proven this website works 10000% better if you have JavaScript enabled.</noscript>
 				{{ if and .Context.User.Username (not (has .Context.User.Privileges 1)) }}
 					<div class="ui warning message">
-						{{ $.T "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Ainu!'s staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal at <a href='https://discord.gg/CEjWW4K'>our Discord</a>." | html }}
+						{{ $.T "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Shibui's staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal at <a href='https://discord.gg/vY29JhD'>our Discord</a>." | html }}
 					</div>
 				{{ end }}
 				{{ if .Messages }}
@@ -84,7 +84,7 @@
 				{{ end }}
 				{{ with $settings.game_maintenance.Int }}
 					<div class="ui warning message">
-						{{ $.T "Shibui!'s score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being." }}
+						{{ $.T "Shibui's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being." }}
 					</div>
 				{{ end }}
 				</div>
@@ -97,7 +97,7 @@
 			<font style='color:white'>
 			{{ if $ds }}<font style='color:white' >{{ end }}
 			{{ .T "&copy; %d  osu!Shibui, using Hanayo %s" (curryear) (version) | html }}
-			<a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a> |
+			<a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a> |	  
 			<div class="ui scrolling dropdown" style="margin-left: 5px;" id="language-selector">
 				{{ $lang := .Context.Language }}
 				{{ with $lang }}
@@ -106,13 +106,13 @@
 				{{ else }}
 					<div class="default text">{{ .T "Language" }}</div>
 				{{ end }}
-				<i class="dropdown icon"></i>
+				<img src="/static/dropdown.png" height="12px" width="12px"></img>
 				<div class="menu">
 					{{ range languageInformation }}
 						<div class="{{ if eq .NameShort $lang }}selected {{ end }}item" data-lang="{{ .NameShort }}"><i class="{{ .CountryShort }} flag"></i>{{ .Name }}</div>
 					{{ end }}
 				</div>
-				</div>
+				</div>			
 			</font>
 		</div>
 		</center>
@@ -148,5 +148,3 @@
 </html>
 {{ end }}
 {{ end }}
-
-

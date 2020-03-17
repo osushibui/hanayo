@@ -10,6 +10,12 @@ KyutGrill=leaderboard2.jpg
 		var favouriteMode = {{ $favMode }};
 		var page = {{ .Gin.Query "p" | atoint | atLeastOne }};
 	</script>
+	<div class="ui three item menu">
+			<a class="item" href="/leaderboard?rx=0">Regular</a>
+			<a class="item" href="/leaderboard?rx=1">Relax</a>
+			<a class="item" href="/clans?mode=0">Clans</a>
+	</div>	
+	<hr class="style-two">
 	<div class="ui four item menu" id="mode-menu">
 			<a class="0 item" href="/clans?mode=0">osu!</a>
 			<a class="1 item" href="/clans?mode=1">osu!taiko</a>

@@ -53,13 +53,11 @@
 			</div>
 			{{ end }}
 			{{ if $isAdmin }}{{ navbarItem .Path (.T "SAP" | printf "<b>%s</b>") "https://old.shibui.pw/index.php?p=100" }}{{ end }}
-			<div class="firetrucking-right-menu">
-			{{ navbarItem .Path (.T "" | printf "<i class=\"blue pencil icon\"></i>%s") "/apply" }}
-			{{ navbarItem .Path (.T "" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
-			{{ navbarItem .Path (.T "" | printf "<i class=\"green download icon\"></i>%s") "/connect" }}
-			</div>
 			{{ end }}
 		<div class="firetrucking-right-menu">
+			{{ navbarItem .Path (printf "<span data-tooltip=\"Apply for Staff\" data-position=\"bottom right\"><i class=\"blue pencil icon\"></i></span>") "/apply" }}
+			{{ navbarItem .Path (printf "<span data-tooltip=\"Support Shibui\" data-position=\"bottom right\"><i class=\"red heart icon\"></i></span>") "/donate" }}
+			{{ navbarItem .Path (printf "<span data-tooltip=\"Connect to Shibui\" data-position=\"bottom right\"><i class=\"green download icon\"></i></span>") "/connect" }}
 			<div class="item">
 				<div class="ui search" id="user-search">
 					<div class="ui icon input">

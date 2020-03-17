@@ -27,12 +27,13 @@ KyutGrill=team2.jpg
 			{{ template "userGroup" (.Get "badges/members?id=%d" 1022) }}
 		</div>
 		<div class="ui center aligned segment">
-			<h1 class="ui heading">{{ .T "Chat Moderators" }}</h1>
+			<h1 class="ui heading">{{ .T "Moderators" }}</h1>
 			<p>
-				{{ .T "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected." | html }}
+				{{ .T "Moderators manage the chat to make sure The Law&trade; (the rules) is respected and check around some players that may potentially be rule breaking." | html }}
 			</p>
 			{{ template "userGroup" (.Get "badges/members?id=%d" 1023) }}
 		</div>
+<!--		
 		<div class="ui center aligned segment">
 			<h1 class="ui heading">{{ .T "BATs" }}</h1>
 			<p>
@@ -40,6 +41,7 @@ KyutGrill=team2.jpg
 			</p>
 			{{ template "userGroup" (.Get "badges/members?id=%d" 1024) }}
 		</div>
+-->
 	</div>
 	<div class="ui segments">
 		<div class="ui center aligned segment">
@@ -65,40 +67,16 @@ KyutGrill=team2.jpg
 					miniircd is licensed under GPL v2. Our implementation can be found <a href="https://github.com/osuthailand/pep.py/src/master/irc/ircserver.py">here</a>.
 				</li>
 				<li>
-					{{ .T "<b>Aki</b>, for the <a href='https://bounties.shibui.pw'>Bounties Website</a>, aswell as some other general improvements around the site" | html }}<br>
+					{{ .T "<b><a href='https://shibui.pw/u/1005'>Aki</b></a>, for the <a href='https://bounties.shibui.pw'>Bounties Website</a>, aswell as some other general improvements around the site" | html }}<br>
 				</li>
-
-				<li>{{ .T "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Shibui and the Ripple project by donating or inviting other people." | html }}</li>
-			</ul>
+				<li>
+					{{ .T "<b><a href='https://shibui.pw/u/1031'>Demon</b></a>, for all the graphics produced on Shibui" | html }}<br>
+				</li>
+				</ul>
 		</div>
 	</div>
 	{{ $ := . }}
-	<div class="ui modal">
-		<div class="header"><h2 class="ui header">{{ .T "They told me these are very cool people." }}</h2></div>
-		{{ with .Get "users?sort=donor_expire,desc&l=52" }}
-			<div class="content">
-				<div class="ui four column grid">
-					{{ range .users }}
-						<div class="column">
-							<h4 class="ui image header">
-								<img src="{{ config "AvatarURL" }}/{{ .id }}" class="ui micro rounded image">
-								<div class="content">
-									<a href="/u/{{ .id }}">{{ .username }}</a>
-								</div>
-							</h4>
-						</div>
-					{{ end }}
 				</div>
-				<!-- Probably most shit coded part of Hanayo -->
-				<br>
-				<div class="centered">
-					<b>{{ $.T "And more..." }}</b><br><br>
-					<b>{{ $.T "Do you want to be in this list?" }}</b><br>
-					<a href="/donate"><b>{{ $.T "Support us with a donation!" }}</b></a><br>
-					<i>{{ $.T "(You get other cool perks too)" }}</i>
-				</div>
-			</div>
 		{{ end }}
 	</div>
 </div>
-{{ end }}
